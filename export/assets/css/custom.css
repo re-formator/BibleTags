@@ -1,0 +1,164 @@
+.navbar-nav active {
+  background-color: rgba(255,255,255,0.5);
+}
+
+.navbar {
+  z-index: 2;
+}
+
+#context-menu {
+  display: none;
+  z-index: 999;
+  min-width: 160px;
+  position: absolute;
+}
+
+.color-box {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  background-color: yellow;
+  border-radius: 3px;
+  border: thin rgba(0,0,255,.5) solid;
+}
+
+.nav-link:hover {
+  background: linear-gradient(180deg,rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0) 90%);
+}
+
+.nav-link {
+  transition: background-color .15s ease-in-out, border .15s ease-in-out, box-shadow .15s ease-in-out, color .15s ease-in-out;
+}
+
+.nav-link:active {
+  background-color: #d9e3f1;
+  border: none;
+  box-shadow: 5px 5px 10px rgba(55,94,148,.2),-5px -5px 10px rgba(255,255,255,.4);
+  transition: background-color .15s ease-in-out,border .15s ease-in-out,box-shadow .15s ease-in-out,color .15s ease-in-out;
+  color: #7b8ab8;
+}
+
+.justify {
+  text-align: justify;
+}
+
+.highlight {
+  background: yellow;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  border: thin white solid;
+  line-height: 1.7em;
+  padding: 1px 7px;
+}
+
+.paper, .nav {
+  box-shadow: 5px 5px 10px rgba(55, 94, 148, 0.2), -5px -5px 10px rgba(255, 255, 255, 0.4);
+}
+
+.left {
+  box-shadow: inset -20px 0 30px -20px rgba(0,0,0,.25);
+}
+
+#bible-text {
+  text-indent: 30px;
+  columns: 25em;
+  column-gap: 2em;
+}
+
+#bible-text p {
+  margin-bottom: 0;
+}
+
+.right {
+  box-shadow: inset 80px 0 45px -30px rgba(255,255,255,1);
+}
+
+:root {
+  --btn-border: thin solid #ddd;
+  --bs-body-bg: #f1f1f8;
+}
+
+.btn-group > .btn:not(:last-child) {
+  border-inline-end: var(--btn-border);
+}
+
+.btn-group > .btn {
+  background-color: var(--bs-light);
+}
+
+mark.multi {
+  background: repeating-linear-gradient( 45deg, rgba(0,0,0,0.02) 0 4px, rgba(255,255,255,0.02) 4px 8px);
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,0.03);
+}
+
+.book-name {
+  flex-grow: 1;
+}
+
+.bookChapterSelect {
+  margin-left: 0.5rem;
+  padding: 0.25rem 0.5rem;
+  border-left: 1px solid #dee2e6;
+  cursor: pointer;
+  user-select: none;
+  right: 0px;
+  width: 30px;
+}
+
+.chapter-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  z-index: 1000;
+  background: white;
+  border: 1px solid #dee2e6;
+  border-radius: 6px;
+  max-height: 100vh;
+  overflow-y: auto;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  display: none;
+}
+
+.chapter-dropdown div {
+  padding: 5px 10px;
+  cursor: pointer;
+  background: white;
+}
+
+.chapter-dropdown div:hover {
+  background: #f1f1f1;
+}
+
+.book-tile {
+  align-items: center;
+  background-image: linear-gradient(to top right, rgba(0,0,0,0), rgba(255,255,255,.5));
+  cursor: pointer;
+  display: flex;
+  font-size: 0.95rem;
+  justify-content: center;
+  position: relative;
+  text-align: center;
+  transition: 0.1s;
+}
+
+.book-tile:hover {
+  background-color: #f8f9fa;
+}
+
+.testament-panel {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #f1f1f8;
+  overflow-y: auto;
+  transform: translateY(-100%);
+  transition: transform 0.1s ease;
+  z-index: 1;
+}
+
+.testament-panel.open {
+  transform: translateY(0);
+  top: 56px;
+}
+
