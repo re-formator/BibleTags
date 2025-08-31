@@ -1,6 +1,7 @@
 $('#modal-1').on('shown.bs.modal', function() {$('#input1').focus();});
 
 let bible;
+let highlights = loadHighlights();
 
 const tags = [
   { id: 1, color: "amber", text: "Вера" },
@@ -27,9 +28,9 @@ loadBible().then(bible => {
   renderBooks("newTestament", 39, 66);
   renderBibleText();
   renderTags();
-  let highlights = loadHighlights();
   highlightByTag(null);
 });
+  
 
 function getChapter(book = 1, chapter=1){
   
