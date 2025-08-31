@@ -27,6 +27,8 @@ loadBible().then(bible => {
   renderBooks("newTestament", 39, 66);
   renderBibleText();
   renderTags();
+  let highlights = loadHighlights();
+  highlightByTag(null);
 });
 
 function getChapter(book = 1, chapter=1){
@@ -52,7 +54,6 @@ function saveHighlights(highlights) {
     console.error("Ошибка сохранения highlights:", e);
   }
 }
-let highlights = loadHighlights();
 
 const nav = document.getElementById("tag-nav");
 
@@ -178,10 +179,6 @@ function highlightByTag(selectedTag) {
     verseEl.innerHTML = resultHTML;
   });
 }
-
-document.addEventListener('DOMContentLoaded', () => {
-  highlightByTag(null);
-});
 
 function renderBibleText(bookName = 'Быт.', chapterNumber = 1) {
   document.querySelectorAll('.testament-panel').forEach(p => p.classList.remove('open'));
@@ -425,9 +422,6 @@ function tryShowMenu(forceRect = false, mouseX, mouseY) {
 
   window.addEventListener('resize', hideMenu);
 })();
-
-
-
 
 // Функция создания плиток
 function renderBooks(containerId, start, end) {
