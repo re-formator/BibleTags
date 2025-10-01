@@ -60,9 +60,14 @@
 }
 
 #bible-text {
-  text-indent: 30px;
   columns: 25em;
   column-gap: 2em;
+}
+
+@media (min-width: 768px) {
+  #bible-text {
+    text-indent: 30px;
+  }
 }
 
 #bible-text p {
