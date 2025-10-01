@@ -232,11 +232,11 @@ function renderBibleText(bookName = 'Быт.', chapterNumber = 1) {
 
 
 
-    
+
 function renderTags() {
   const container = document.getElementById("tag-buttons");
   container.innerHTML = "";
-  nav.innerHTML = '<li class="nav-item" onClick="highlightByTag()"><div class="nav-link active d-flex align-items-center" style="cursor: pointer;"><span>Все</span></div></li>';
+  nav.innerHTML = '';
   tags.forEach(tag => {
 // context menu
     const btn = document.createElement("button");
@@ -310,11 +310,12 @@ btn.addEventListener("click", () => {
 });
 
     container.appendChild(btn);
-// tags bar
-    const li = document.createElement("li");
-    li.className = "nav-item";
+    
+    
+    
+// Панель тегов
     const div = document.createElement("div");
-    div.className = "nav-link d-flex align-items-center";
+    div.className = "nav-link d-inline-block align-items-center p-2";
     div.style.cursor = "pointer";
     const colorBox = document.createElement("div");
     colorBox.className = "color-box me-2 " + tag.color;
@@ -330,13 +331,8 @@ btn.addEventListener("click", () => {
       div.classList.add("active");
       highlightByTag(tag);
     });
-    li.appendChild(div);
-    nav.appendChild(li);
+    nav.appendChild(div);
   });
-    const li = document.createElement("li");
-    li.className = "nav-item";
-    li.innerHTML = `<a class="nav-link" href="#" data-bs-target="#modal-1" data-bs-toggle="modal"><i class="far fa-plus-square"></i></a>`;
-    nav.appendChild(li);
     highlightByTag();
 }
 
