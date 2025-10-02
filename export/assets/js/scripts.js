@@ -228,6 +228,16 @@ function renderBibleText(bookName = 'Быт.', chapterNumber = 1) {
 
   // Обновляем URL без перезагрузки страницы
   history.pushState(null, "", `/?${encodeURIComponent(bookName)}:${chapterNumber}`);
+  
+  // Обновляем действия кнопок Назад и Вперед
+   document.getElementById("goBack").onclick = function() {
+     renderBibleText(bookName, chapterNumber - 1);
+   };
+   document.getElementById("goForward").onclick = function() {
+     renderBibleText(bookName, chapterNumber + 1);
+   };
+
+
 }
 
 
